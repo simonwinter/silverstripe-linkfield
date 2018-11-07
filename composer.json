@@ -17,7 +17,7 @@
   ],
   "homepage": "http://github.com/gorriecoe/silverstripe-linkfield",
   "require": {
-    "gorriecoe/silverstripe-link": "^1.0",
+    "gorriecoe/silverstripe-link": "dev-master",
     "silvershop/silverstripe-hasonefield": "^2.1",
     "symbiote/silverstripe-gridfieldextensions": "^3.1"
   },
