@@ -19,6 +19,7 @@ use SilverStripe\Control\HasRequestHandler;
 use SilverStripe\Control\HTTPRequest;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use SilverShop\HasOneField\HasOneButtonField;
+use SilverShop\HasOneField\HasOneAddExistingAutoCompleter;
 
 /**
  * LinkField
@@ -172,7 +173,7 @@ class LinkField extends FormField
      */
     public function getHasOneField()
     {
-        return HasOneButtonField::create(
+        $field = HasOneButtonField::create(
             $this->parent,
             $this->name,
             null,
@@ -180,6 +181,10 @@ class LinkField extends FormField
         )
         ->setForm($this->Form)
         ->addExtraClass('linkfield__button');
+        
+        $field->getConfig()->removeComponentsByType(HasOneAddExistingAutoCompleter::classs);
+        
+        return $field;
     }
 
     /**
