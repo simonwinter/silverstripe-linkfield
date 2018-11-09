@@ -182,7 +182,7 @@ class LinkField extends FormField
         ->setForm($this->Form)
         ->addExtraClass('linkfield__button');
         
-        $field->getConfig()->removeComponentsByType(HasOneAddExistingAutoCompleter::classs);
+        $field->getConfig()->removeComponentsByType(HasOneAddExistingAutoCompleter::class);
         
         return $field;
     }
